@@ -16,7 +16,6 @@ install:
   - pip install coverage
   - pip install pytest-cov
   - pip install mock
-  - pip install wheel
   - pip install codecov # For codecov specifically
   - pip install fake_rpi
   - pip install codacy-coverage

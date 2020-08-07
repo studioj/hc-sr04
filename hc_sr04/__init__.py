@@ -9,3 +9,5 @@ class HCSR04(object):
         GPIO.setmode(GPIO.BCM)
         GPIO.setup(self._trig_pin, GPIO.OUT)
         GPIO.setup(self._echo_pin, GPIO.IN)
+        print("setting trigger pin to False to make sure it's not floating")
+        GPIO.output(self._trig_pin, False)

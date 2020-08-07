@@ -52,3 +52,15 @@ class TestBasics(unittest.TestCase):
         # When
         HCSR04(trigger, echo)
         self.gpio_mock.setup.assert_any_call(echo, self.gpio_mock.IN)
+
+    def test_the_trigger_pin_is_set_to_false_to_prevent_floating_value(self) -> None:
+        # Given
+        trigger = 24
+        echo = 18
+        # When
+        HCSR04(trigger, echo)
+        self.gpio_mock.output.assert_any_call(trigger, False)
+
+
+if __name__ == "__main__":
+    unittest.main()
